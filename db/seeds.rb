@@ -1,11 +1,11 @@
-Heroine.destroy_all
-Power.destroy_all
+# Heroine.destroy_all
+# Power.destroy_all
 
 powers = [
-  {name:"super strength", description: "gives the wielder super-human strengths" },
-  {name:"flight", description: "gives the wielder the ability to fly through the skies at supersonic speed" },
-  {name:"super human senses", description: "allows the wielder to user her senses at a super-human level" },
-  {name:"elasticity", description: "can stretch the human body to extreme lengths" }
+  {name:"super strength", description: "gives the wielder super-human strengths"},
+  {name:"flight", description: "gives the wielder the ability to fly through the skies at supersonic speed"},
+  {name:"super human senses", description: "allows the wielder to user her senses at a super-human level"},
+  {name:"elasticity", description: "can stretch the human body to extreme lengths"}
 ]
 
 powers.each {|power| Power.create(power)}
