@@ -1,10 +1,29 @@
 <h2>All Heroines</h2>
 
+
+<br>
+<h4>Search By Superpower</h4>
+
+
+<%= form_tag(heroines_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Heroine" %>
+<%= submit_tag "Search" %>
+<% end %>
+
+
+<% if @heroines.present? %>
+  <%= render 'heroine' %>
+<% else %>
+  <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+<% end %>
+
+
 <ul>
-  <% @heroines.each do |heroine| %>
+  <% @heroines.each do |h| %>
     <li>
-      <%= heroine.super_name %>
+      <%=link_to h.super_name, heroine_path(h)%>
     </li>
     <br>
   <% end %>
+  
 </ul>
