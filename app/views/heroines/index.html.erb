@@ -1,10 +1,27 @@
 <h2>All Heroines</h2>
 
+
+<%= form_tag("/heroines", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
 <ul>
-  <% @heroines.each do |heroine| %>
-    <li>
+<% if params["q"].present? && Power.all.map {|p| p.name}.include?(params["q"]) %>
+    <% @powered_heroines = @heroines.select {|heroine| heroine.power_name == params["q"]} %>
+    <% @powered_heroines.each do |heroine| %>
+      <li>
+      <%= link_to heroine.super_name, heroine_path(heroine) %>
+      </li>
+      <br>
+    <%end%>
+<% else %>
+    <% @heroines.each do |heroine| %>
+      <li>
       <%= link_to heroine.super_name, heroine_path(heroine) %>
     </li>
     <br>
-  <% end %>
+    <% end %>
+<% end %>
 </ul>
