@@ -22,6 +22,8 @@ Luckily, another developer has already started the job. We have a model for hero
 
 We have several different powers and each can be bestowed upon **more than one heroine**. Each heroine can only have **one power**.
 
+
+
 ## Instructions / Deliverables
 
 Read through the instructions to get a sense of the scope of this code challenge, and then tackle them one by one.
@@ -30,13 +32,33 @@ Read through the instructions to get a sense of the scope of this code challenge
 
 1. Create the associations between models. You may have to alter the current schema to get your code working. If you've set up your relationships properly, you should be able to run `rake db:seed` without errors, and confirm in console that the heroines and powers have been created with the proper relations.
 
+has_many :powers
+belongs_to :heroine
+
+rake db:migrate
+
+check schema
+
+rake db:seed
+
+
 2. On the heroines index page, a heroine's super name should link to that heroine's show page.
 
+Index should link to show page, do link_to for the link_to, @heroine.name, @heroine
+
+
 3. The heroine show page should include the heroine's name (eg. Kamala Khan), her super name (eg. Ms. Marvel), and her power. The power should link to the power show page.  
+
+
+@heroine.name
+@heroine.super_name
+@heroine.powers
 
 4. The power show page should have its name and description.
 
 5. As a visitor to the website, I should be able to create a new heroine with her name and super name.
+
+<%=f.collection_select :power_id, @heroines, :id, :name %>
 
 6. The form should also allow each heroine to be created with **only one of the existing powers**.
 
