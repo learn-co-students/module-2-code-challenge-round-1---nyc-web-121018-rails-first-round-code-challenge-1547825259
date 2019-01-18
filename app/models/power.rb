@@ -2,6 +2,6 @@ class Power < ApplicationRecord
 
 has_many :heroines
 
-  validates :power, uniqueness: :true
+  # validates :super_name, uniqueness: :true
 
 end

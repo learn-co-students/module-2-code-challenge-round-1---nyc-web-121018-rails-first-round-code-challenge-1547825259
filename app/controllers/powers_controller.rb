@@ -5,12 +5,12 @@ class PowersController < ApplicationController
 
 def show
   @power = Power.find(params[:id])
-  @powers = @heroine.powers
+  # @powers = @heroine.powers
   # @heroines = Heroine.all
 end
 
-def power_params
-params.require(:power).permit(:name, :description, :heroine_id)
-end
+# def power_params
+# params.require(:power).permit(:name, :description, :heroine_id)
+# end
 
 end

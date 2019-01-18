@@ -4,7 +4,6 @@
 
 <p> <b> Super name:</b> <%= @heroine.super_name %>
 
-<ul> <p> Power: <%= link_to @heroine.power.name, power %>
-    <% end %> %>
+<ul> <p> Power: <%= link_to @power.name, @power %>
 
 <br> <%= link_to "Go Back", heroines_path %>

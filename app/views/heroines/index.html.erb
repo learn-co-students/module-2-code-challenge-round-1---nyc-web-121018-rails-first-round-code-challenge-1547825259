@@ -7,7 +7,7 @@ On the heroines index page, a heroine's super name should link to that heroine's
  <% @heroines.each do |heroine| %>
     <li>
        <li>
-<%= link_to heroine.super_name, heroine_path(heroine) %>
+<%= link_to heroine.super_name, heroine %>
     </li>
   <% end %>
 
