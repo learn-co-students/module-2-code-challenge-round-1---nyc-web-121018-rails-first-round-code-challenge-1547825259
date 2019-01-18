@@ -28,7 +28,9 @@ class HeroinesController < ApplicationController
   end
 
   def search
-    "test"
+    byebug
+    criteria = params[:search]
+    @posts = Post.where('text LIKE ?', "%#{criteria}%")
   end
 
   private
