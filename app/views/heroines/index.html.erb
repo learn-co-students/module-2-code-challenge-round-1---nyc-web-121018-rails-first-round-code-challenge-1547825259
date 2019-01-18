@@ -11,6 +11,11 @@
 <% end %>
 
 
+<% if @heroines.present? %>
+  <%= render 'heroine' %>
+<% else %>
+  <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+<% end %>
 
 
 <ul>
