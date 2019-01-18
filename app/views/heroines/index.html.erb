@@ -1,10 +1,14 @@
 <h2>All Heroines</h2>
 
+<!--
+On the heroines index page, a heroine's super name should link to that heroine's show page. -->
+
 <ul>
-  <% @heroines.each do |heroine| %>
+ <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+       <li>
+<%= link_to heroine.super_name, heroine %>
     </li>
-    <br>
   <% end %>
-</ul>
+
+<p> <br> <%= link_to "Create Heroine", new_heroine_path %> </p>
